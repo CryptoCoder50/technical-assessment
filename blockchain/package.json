@@ -1,0 +1,19 @@
+{
+  "name": "blockchain-certificates",
+  "version": "1.0.0",
+  "description": "Certificate verification smart contract",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.cjs",
+    "test-certificate": "npx hardhat run scripts/test-certificate.cjs",
+    "node": "npx hardhat node"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

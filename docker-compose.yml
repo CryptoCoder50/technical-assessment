@@ -1,0 +1,104 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: school_mgmt_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: school_mgmt
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./seed_db:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - school_network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: school_mgmt_backend
+    environment:
+      NODE_ENV: production
+      PORT: 5007
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/school_mgmt
+      JWT_SECRET: your_jwt_secret_key_change_this
+      JWT_REFRESH_SECRET: your_refresh_secret_key_change_this
+      CSRF_SECRET: your_csrf_secret_change_this
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "5007:5007"
+    networks:
+      - school_network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: school_mgmt_frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    networks:
+      - school_network
+
+  #  Blockchain - Hardhat Node
+  hardhat-node:
+    image: ghcr.io/lidofinance/hardhat-node:latest-scratch
+    container_name: hardhat_node
+    ports:
+      - "8545:8545"
+    networks:
+      - school_network
+    healthcheck:
+      test: ["CMD", "curl", "-X", "POST", "-H", "Content-Type: application/json", "--fail", "http://localhost:8545", "-d", '{"jsonrpc":"2.0","method":"net_version","params":[],"id":1}']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  # 🔧 Blockchain - Contract Deployer 
+  hardhat-deploy:
+    image: node:18-alpine
+    container_name: hardhat_deployer
+    working_dir: /app
+    volumes:
+      - ./blockchain:/app
+      - ./frontend/src/domains/certificates/config:/app/config-output
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      hardhat-node:
+        condition: service_healthy
+    networks:
+      - school_network
+    # This runs the deployment script once and exits
+    entrypoint: ["sh", "-c"]
+    command:
+      - |
+        npm install && \
+        npx hardhat run scripts/deploy.cjs --network localhost && \
+        echo " Contract deployed successfully!" && \
+        echo " Check config files in frontend/src/domains/certificates/config/"
+    restart: "no" 
+
+networks:
+  school_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

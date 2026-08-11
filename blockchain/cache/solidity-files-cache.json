@@ -1,0 +1,341 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\contracts\\CertificateVerification.sol": {
+      "lastModificationDate": 1786411292664,
+      "contentHash": "158f0ff13989975d08cdcbd34bb60efc",
+      "sourceName": "contracts/CertificateVerification.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../openzeppelin/AccessControl.sol",
+        "../openzeppelin/ReentrancyGuard.sol",
+        "../openzeppelin/Counters.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "CertificateVerification"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\ReentrancyGuard.sol": {
+      "lastModificationDate": 1786408623339,
+      "contentHash": "929be2c4034488b39ee5d14b13be8b20",
+      "sourceName": "openzeppelin/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./StorageSlot.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\Counters.sol": {
+      "lastModificationDate": 1786409610377,
+      "contentHash": "047d6dfb038d43ebdcb4dda73e4acaf1",
+      "sourceName": "openzeppelin/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\AccessControl.sol": {
+      "lastModificationDate": 1786410022509,
+      "contentHash": "7470cda02a0296fb81c0c2e8ae9d1de7",
+      "sourceName": "openzeppelin/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControl.sol",
+        "./Context.sol",
+        "./ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\StorageSlot.sol": {
+      "lastModificationDate": 1786410022609,
+      "contentHash": "639bff8f8571cddd0f205a6b64954887",
+      "sourceName": "openzeppelin/StorageSlot.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "StorageSlot"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\IAccessControl.sol": {
+      "lastModificationDate": 1786410022667,
+      "contentHash": "44cc51d1f9b1b2fd1dd55de4ea217ed4",
+      "sourceName": "openzeppelin/IAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.4"
+      ],
+      "artifacts": [
+        "IAccessControl"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\Context.sol": {
+      "lastModificationDate": 1786408263072,
+      "contentHash": "0891a19219aa837c0a9c9209dcbfe375",
+      "sourceName": "openzeppelin/Context.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\ERC165.sol": {
+      "lastModificationDate": 1786410022542,
+      "contentHash": "6eae6f2512b6a6a16a51d886776d5fff",
+      "sourceName": "openzeppelin/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "C:\\Users\\warre\\Downloads\\technical-assessment\\blockchain\\openzeppelin\\IERC165.sol": {
+      "lastModificationDate": 1786408443033,
+      "contentHash": "955f4d464295f9a0493f347cd9725edd",
+      "sourceName": "openzeppelin/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.16"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    }
+  }
+}
